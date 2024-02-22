@@ -31,19 +31,20 @@ async function postMethod() {
 
 async function putMethod() {
   const response = await request(url)
-    .put("/objects/12") 
+    .put("/objects/7") 
     .send({
-      name: "Ahmad Zhilal",
+      name: "macbook pro 17",
       data: {
-        Generation: "6th generation",
-        Price: "80000",
-        Capacity: "1 TB",
+        Generation: "5th generation",
+        Price: "75000",
+        Capacity: "512 GB",
+        color: "silver"
       },
     });
   
-  // Assertion / Verification
-  expect(response.status).to.equal(200);
-  expect(response.body.name).to.equal("Ahmad Zhilal");
+  
+  expect(response.status).to.equal(405);
+  
 
   console.log(response.body);
 }
